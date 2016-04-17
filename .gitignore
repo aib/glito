@@ -3,3 +3,9 @@ config.log
 config.status
 Makefile
 Makefile.in
+*.o
+intl/charset.alias
+intl/libintl.a
+intl/libintl.h
+intl/ref-add.sed
+intl/ref-del.sed
