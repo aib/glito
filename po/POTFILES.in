@@ -1,0 +1,10 @@
+# List of source files containing translatable strings.
+# Copyright (C) 2002 Emmanuel Debanne
+
+# Package source files
+src/Main.cpp
+src/Glito.cpp
+src/Skeleton.cpp
+src/Image.cpp
+src/Function.cpp
+

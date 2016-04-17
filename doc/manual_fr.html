@@ -1,0 +1,344 @@
+<HTML><HEAD>
+<TITLE>Manuel de Glito</TITLE>
+</HEAD><BODY>
+
+<H1>Manuel de Glito</H1>
+
+<P>[<A href="manual_eo.html">Esperanta traduko</A>]
+&nbsp;[<A href="manual_en.html">English version</A>]
+
+<P><SMALL>Copyright (C) 1996, 2002-2004 Emmanuel Debanne
+(emmanuel a debanne . net)
+<BR>Ce programme est plac&eacute; sous la <A href="#copy">Licence
+Public G&eacute;n&eacute;rale GNU</A>. Il utilise la
+biblioth&egrave;que FLTK (<A
+href="http://www.fltk.org/">www.fltk.org</A>).
+</SMALL>
+
+<P>Glito permet l'exploration (construction manuelle ou
+al&eacute;atoire, visualisation en temps r&eacute;el) de fractales de
+type IFS (Syst&egrave;mes de Fonctions It&eacute;r&eacute;es). Un
+certain nombre d'animations sont propos&eacute;es. Le r&eacute;sultat
+peut &ecirc;tre enregistr&eacute;.
+
+<UL>
+<LI><A href="#parameters">Param&egrave;tres</A></LI>
+<LI><A href="#file">Menu Fichier</A></LI>
+<LI><A href="#help">Menu Aide</A></LI>
+<LI><A href="#preview">Mode de pr&eacute;visualisation</A></LI>
+<LI><A href="#function">Menu Fonction</A></LI>
+<LI><A href="#skelet">Menu Squelette</A></LI>
+<LI><A href="#anim">Menu Animation</A></LI>
+<LI><A href="#shortcut">Raccourcis</A></LI>
+<LI><A href="#copy">Copyright</A></LI>
+</UL>
+
+<HR>
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="parameters">Param&egrave;tres</H2>
+
+<P>Lorsqu'il est lanc&eacute;, Glito essaie de lire le fichier
+"param.xml" s'il existe. Dans le cas contraire, des param&egrave;tres
+par d&eacute;faut sont pris en compte.
+
+<P>Les param&egrave;tres peuvent &ecirc;tre modifi&eacute;s dans
+Fichier->Editer_param&egrave;tres, lus dans un fichier avec
+Fichier->Ouvrir_param&egrave;tres et enregistr&eacute;s avec
+Fichier->Sauver_param&egrave;tres.
+
+<P>Voici la liste des param&egrave;tres pouvant &ecirc;tre
+r&eacute;gl&eacute;s dans Fichier->Editer_param&egrave;tres.
+
+<H5>Taille du sch&eacute;ma</H5>
+Rapport entre la taille du sch&eacute;ma et le plus petit
+c&ocirc;t&eacute; de la fen&ecirc;tre principale.
+
+<H5>Taille de pr&eacute;visualisation</H5>
+Rapport entre la taille du cadre de pr&eacute;visualisation et la
+taille de la fen&ecirc;tre principale.
+
+<H5>Angle de rotation</H5>
+Les touches "fl&ecirc;ches haut" et "fl&ecirc;ches bas" effectuent une
+rotation de la fonction s&eacute;lectionn&eacute;e ayant pour angle
+cette valeur mesur&eacute;e en radian.
+
+<H5>Taille d'enregistrement des images</H5>
+Largeur et hauteur des images enregistr&eacute;es.
+
+<H5>Nombre de frames par cycle</H5>
+Nombre de frames pour chaque cycle d'une animation. Multipli&eacute; par 2
+pour une rotation ou une transition.
+
+<H5>D&eacute;tection de mouvement</H5>
+Intervalle de temps minimal avant que les mouvements de la souris ne
+soient pris en compte.
+
+<H5>Densit&eacute;</H5>
+L'&eacute;clairage d'un pixel est fonction du nombre de fois qu'il a
+&eacute;t&eacute; atteint. Contrairement &agrave "Gris minimal", ce
+nombre n'est pas limit&eacute; ici &agrave; 255. La contrepartie est
+que le calcul est plus lent lors d'un raffra&icirc;chissement de
+l'image et que la quantit&eacute; de m&eacute;moire requise est
+mulitpli&eacute;e par 5.
+
+<H5>Gris minimal</H5>
+Valeur minimale de l'&eacute;clairage d'un pixel. La premi&egrave;re
+fois qu'un pixel est atteint pendant le calcul, sa couleur est
+fix&eacute; &agrave; cette valeur. A chaque fois qu'il est de nouveau
+atteint, sa valeur est augment&eacute;e de 1.
+
+<H5>Points pour le cadrage</H5>
+Nombre de points calcul&eacute; pour d&eacute;finir la plus petite
+bo&icirc;te englobante de l'IFS.  Plus ce nombre est
+&eacute;lev&eacute;, plus il faudra attendre avant de voir un nouvel
+IFS mais plus il on sera certain qu'il ne va pas sortir du cadre.
+
+<H5>pour une animation</H5>
+Coefficient de multiplication de Points for framing dans le cas d'une
+pr&eacute;visualisation ou d'une frame d'une animation.
+
+<H5>Intervalle par frame</H5>
+Le temps de calcul entre deux raffra&icirc;chissements peut &ecirc;tre
+d&eacute;fini de deux fa&ccedil;ons : soit en milli-secondes, soit en
+nombre de points calcul&eacute;s. Attention : il s'agit du temps
+pass&eacute; par le processus et non du temps r&eacute;el.
+
+<H5>Points par frame</H5>
+Nombre de points &agrave; calculer avant un raffra&icirc;chissement.
+
+<H5>Calibrer</H5>
+Le calibrage permet de calculer le nombre de points qu'il faut
+calculer pour chaque frame d'une animation (pointsPerFrame) en
+fonction du nombre de frames par seconde (une seconde r&eacute;elle et
+non une seconde du temps du processus).
+<BR>Apr&egrave;s calibrage, on a pointsPourLeCadrage = 5*pointsParFrame.
+
+<H5>Noir/Blanc</H5>
+Modifie la couleur du fond des images.
+
+<H5>Transparence</H5>
+Une image PNG ou une animation MNG peuvent &eacute;tre
+enregistr&eacute;s en transparence. La transparence peut &ecirc;tre
+appliqu&eacute;e &agrave; la seule couleur du fond ("une couleur") ou
+&agrave; l'ensemble des couleurs ("alpha").
+
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="file">Menu Fichier</H2>
+
+<H3>Sauver les param&eacute;tres</H3>
+
+<P>Tous les param&egrave;tres pr&eacute;c&eacute;demment
+&eacute;voqu&eacute;s peuvent &ecirc;tre enregistr&eacute;s dans le
+fichier "param.xml" en cliquant sur Fichier->Sauver_Param&egrave;tres.
+
+<H3>Vue sch&eacute;ma / Vue large</H3>
+
+<P>On peut passer du mode de pr&eacute;visualisation (sch&eacute;ma +
+image) au mode large (image uniquement) au moyen du menu ou de la
+touche 'b'.
+
+<H3>Sauver PNG/BMP/PGM</H3>
+
+<P>Les fractales peuvent &ecirc;tre sauvegard&eacute;es aux formats
+PNG, PGM ou BMP (bitmap ou niveaux de gris).
+
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="help">Menu Aide</H2>
+
+<P>Aide->Documentation permet de visualiser ce fichier.
+
+<P>Aide->D&eacute;mo lance une d&eacute;mo.<BR> Sont effectu&eacute;s
+en boucle : une rotation, un zoom et une transition vers un nouveau
+squelette. Les IFS lin&eacute;aires et sinuso&iuml;daux sont
+utilis&eacute; tour &agrave; tour.
+
+<P>Aide->A_Propos : version et copyright du logiciel.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="preview">Mode de pr&eacute;visualisation</H2>
+
+<P>Dans ce mode, la souris et le clavier permettent de modifier le
+squelette et de visualiser le r&eacute;sultat en m&ecirc;me temps.
+
+<P>Nous appelons une fonction, l'application affine du type:
+<BR>X<sub>n+1</sub> = x<sub>1</sub> X<sub>n</sub>
+ + x<sub>2</sub> Y<sub>n</sub> + x<sub>c</sub>
+<BR>Y<sub>n+1</sub> = y<sub>1</sub> X<sub>n</sub>
+ + y<sub>2</sub> Y<sub>n</sub> + y<sub>c</sub>
+
+<P>Cette application est repr&eacute;sent&eacute;e sous forme d'un
+parall&eacute;logramme de centre (x<sub>c</sub>, y<sub>c</sub>) et
+dont 2 cot&eacute;s contigus sont les vecteurs V<sub>1</sub> =
+(x<sub>1</sub>, y<sub>1</sub>) et V<sub>2</sub> = (x<sub>2</sub>,
+y<sub>2</sub>).
+
+<P>Un squelette est un nombre n de ces fonctions (l'IFS) plus une
+fonction servant de zoom.
+
+<P>La fonction s&eacute;lectionn&eacute;e est mise en valeur par la
+couleur rouge. La fonction zoom se distingue des autres par la couleur
+blanche.
+
+<BR>Tapez sur les touches 'v' (ou "fl&ecirc;che gauche") et 'n' (ou
+"fl&ecirc;che droite") pour circuler dans les s&eacute;lections.
+
+<P>Il existe deux modes de fonctionnement de souris. Le premier
+(rot/hom non coch&eacute; dans la barre de menu) permet de translater
+de parall&eacute;logramme ou de modifier les sommets des vecteurs
+V<sub>1</sub> ou V<sub>2</sub>. Le second mode (rot/hom coch&eacute;)
+permet d'appliquer une rotation, une homoth&eacute;tie ou les deux
+simultan&eacute;ment &agrave; un parall&eacute;logramme;
+
+<P>Pour changer de mode, utiliser la barre d'espace ou cliquer dans la
+barre de menu.
+
+<H4>Mode normal</H4>
+
+<P>Les valeurs x<sub>c</sub> et y<sub>c</sub> d'une fonction sont
+modifi&eacute;s en appuyant sur le bouton gauche de la souris et en la
+d&eacute;pla&ccedil;ant en m&ecirc;me temps. Le centre du
+parall&eacute;logramme se place alors au niveau de la souris.
+
+<P>Les valeurs x<sub>1</sub> et y<sub>1</sub> (vecteur V<sub>1</sub>)
+ou x<sub>2</sub> et y<sub>2</sub> (vecteur V<sub>2</sub>) sont
+modifi&eacute;es en appuyant sur le bouton droit de la souris et en la
+d&eacute;pla&ccedil;ant en m&ecirc;me temps. Le choix du vecteur
+V<sub>1</sub> ou V<sub>2</sub> se fait selon la proximit&eacute; de la
+souris avec les extr&eacute;mit&eacute;s des vecteurs. La forme du
+centre du parall&eacute;logramme indique l'ordre des vecteurs
+V<sub>1</sub> et V<sub>2</sub> (+ ou - selon la valeur du sinus de
+l'angle (V<sub>1</sub>,V<sub>2</sub>)).
+
+<P>Pour modifier un c&ocirc;t&eacute; en laissant l'autre immobile,
+appuyez sur le bouton du milieu (ou les deux boutons).
+
+<H4>Mode rotation/homoth&eacute;tie</H4>
+
+<P>Pour faire pivoter (resp. modifier la taille) du
+parall&eacute;logramme, il suffit d'appuyer sur le bouton gauche
+(resp. bouton droit). Ces transformations sont appliqu&eacute;es au
+sommet form&eacute; par les c&ocirc;t&eacute;s V<sub>1</sub> et
+V<sub>2</sub>. On peut &eacute;galement appuyer sur le bouton du
+milieu (ou les deux boutons si c'est une souris &agrave; deux boutons)
+pour affectuer une rotation et l'homoth&eacute;tie
+simultan&eacute;ment. Le sommet suit alors le mouvement de la souris.
+
+<P>Voici un r&eacute;sum&eacute; des interactions possibles avec la
+souris. Les valeurs modifi&eacute;es sont indiqu&eacute;es entre
+crochets :
+
+<P>
+<TABLE border="2">
+<TR><TD>Mode</TD><TD>Bouton gauche</TD><TD>Bouton droit</TD>
+<TD>Bouton milieu<BR>(ou gauche + droit)</TD></TR>
+<TR><TD>normal   </TD><TD>translation [x<sub>c</sub>,y<sub>c</sub>]</TD><TD>V<sub>1</sub> [x<sub>1</sub>,y<sub>1</sub>] ou V<sub>2</sub> [x<sub>2</sub>,y<sub>2</sub>]</TD>
+<TD>V<sub>1</sub> et centre [x<sub>1</sub>,y<sub>1</sub>,x<sub>c</sub>,y<sub>c</sub>] <BR>ou V<sub>2</sub> et centre [x<sub>2</sub>,y<sub>2</sub>,x<sub>c</sub>,y<sub>c</sub>]</TD></TR>
+<TR><TD>rot/hom</TD><TD>rotation [x<sub>1</sub>,y<sub>1</sub>,x<sub>2</sub>,y<sub>2</sub>]</TD><TD>homoth&eacute;tie [x<sub>1</sub>,y<sub>1</sub>,x<sub>2</sub>,y<sub>2</sub>]</TD>
+<TD>rotation et homoth&eacute;tie</TD></TR>
+</TABLE>
+
+<P>Les touches "fl&ecirc;che haut" et "fl&ecirc;che bas" permettent
+de faire pivoter la fonction de la valeur de "rotation shift".
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="function">Menu Fonction</H2>
+
+<P>Le menu "Fonction" ou les raccourcis CTRL+X,C,V permettent de
+couper, copier ou coller une fonction.
+
+<P>Pour r&eacute;initialiser la forme d'un parall&eacute;logramme,
+s&eacute;lectionnez Fonction->Carr&eacute; ou appuyez sur la touche 's'.
+
+<P>Pour changer de type de syst&egrave;me, s&eacute;lectionnez
+Fonction->Lin&eacute;aire, Fonction->Sinuso&iuml;dal ou
+Fonction->Julia. L'&eacute;chelle du sch&eacute;ma est alors
+automatiquement adapt&eacute;e.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="skelet">Menu Squelette</H2>
+
+<P>Pour cr&eacute;er une nouvelle fractale, on peut cliquer sur
+Squelette->Nouveau. Un certain nombre de fractales connues peuvent
+&ecirc;tre obtenus en choisissant ici un nombre carr&eacute; de
+fonctions (4 ou 9) et en en supprimant ensuite quelques unes avec
+Fonction->Couper (CTRL-X).
+
+<P>Squelette->Al&eacute;atoire; (touche 'h') permet de modifier
+al&eacute;atoirement la valeur des fonctions. Il fonctionne en mode de
+pr&eacute;visualisation et en mode large.
+
+<P>Les squelettes peuvent &ecirc;tre sauvegard&eacute;s et ouverts
+dans un format facilement &eacute;ditable au moyen de
+Squelette->Sauver et Squelette->Ouvrir. Ils sont exportables dans un
+format lisible par Fractint au moyen de
+Squelette->Exporter_vers_Fractint. Attention : ces deux formats ont la
+m&ecirc;me extension ".ifs".
+
+<P>Squelette->Dimension permet d'obtenir la dimension d'Hausdorff du
+squelette.
+
+<P>Il est possible d'enregistrer en m&eacute;moire un squelette. 4
+m&eacute;moires sont disponibles : Squelette->Sauve_M&eacute;moire_X
+ou bien touches '5', '6', '7' et '8'. Pour rappeler un squelette :
+Squelette->Rappelle_M&eacute;moire_X ou bien touches '1', '2', '3' et
+'4'.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="anim">Menu Animation</H2>
+
+<H5>Zoom</H5>
+
+<P>Pour zoomer dans la fonction s&eacute;lectionn&eacute;e.
+
+<H5>Transition</H5>
+
+<P>Pour r&eacute;aliser une transition entre le squelette de la
+m&eacute;moire 1 et celui de la m&eacute;moire 2.
+
+<H5>Rotation</H5>
+
+<P>La fonction s&eacute;lectionn&eacute;e est pivot&eacute;e &agrave;
+chaque frame d'un angle PI/(Nombre de frames par cycle).
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="shortcut">Raccourcis</H2>
+
+<P>Les raccourcis claviers de Glito (autres que CTRL-...) sont :
+
+<P><TABLE border="1">
+<TR><TD>'ESC'</TD><TD>Interrompt monmentan&eacute;ment un
+calcul.<BR>Rappuyer sur ESC pour le continuer.</TD></TR>
+<TR><TD>'b'</TD><TD>Alterne le mode de pr&eacute;visualisation
+et le mode large.</TD></TR>
+<TR><TD>'Espace'</TD><TD>Change le mode de r&eacute;action aux cliques souris.</TD></TR>
+<TR><TD>'v' et 'n'</TD><TD>Change la fonction s&eacute;lectionn&eacute;e.</TD></TR>
+<TR><TD>'F1'</TD><TD>Affiche cette documentation</TD></TR>
+<TR><TD>'z'</TD><TD>Lance l'animation "zoom".</TD></TR>
+<TR><TD>'t'</TD><TD>Lance l'animation "transition".</TD></TR>
+<TR><TD>'r'</TD><TD>Lance l'animation "rotation".</TD></TR>
+<TR><TD>'s'</TD><TD>Transforme en carr&eacute; un parall&eacute;logramme.</TD></TR>
+<TR><TD>1, 2, 3 ou 4</TD><TD>Rappelle le squelette de la m&eacute;moire
+1, 2, 3 ou 4</TD></TR>
+<TR><TD>5, 6, 7 ou 8</TD><TD>Enregistre le squelette dans la
+m&eacute;moire 1, 2, 3 ou 4</TD></TR>
+</TABLE>
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="copy">Copyright</H2>
+
+<P>Glito is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+<P>Glito is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+<P>You should have received a copy of the GNU General Public License
+along with Glito (named <A href="COPYING">COPYING</A>); if not, write to the Free
+Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA
+<HR>
+</HTML>

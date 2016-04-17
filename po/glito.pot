@@ -1,0 +1,661 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2004-09-05 11:37-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Glito.cpp:56
+msgid "Choose a directory for fast saving"
+msgstr ""
+
+#: Glito.cpp:62
+#, c-format
+msgid ""
+"You did not enter a valid directory:\n"
+"%s"
+msgstr ""
+
+#: Glito.cpp:93 Glito.cpp:137 Glito.cpp:333
+msgid "Saving PNG file failed."
+msgstr ""
+
+#: Glito.cpp:307 Glito.cpp:309 Glito.cpp:311 Glito.cpp:313
+msgid "Pick a file"
+msgstr ""
+
+#: Glito.cpp:343
+msgid "Saving MNG file failed."
+msgstr ""
+
+#: Glito.cpp:470
+msgid "press ESC to continue"
+msgstr ""
+
+#: Glito.cpp:569
+msgid ""
+"Can not remove this function.\n"
+"The system must contain 1 function at least."
+msgstr ""
+
+#: Glito.cpp:581
+#, c-format
+msgid ""
+"Can not paste this function.\n"
+"The number of functions can not exceed %d."
+msgstr ""
+
+#: Glito.cpp:666
+#, c-format
+msgid "System to slow to show %d frames per second."
+msgstr ""
+
+#: ImageGray.cpp:68
+msgid "one color"
+msgstr ""
+
+#: ImageGray.cpp:70
+msgid "alpha"
+msgstr ""
+
+#: ImageGray.cpp:72
+msgid "none"
+msgstr ""
+
+#: ImageGray.cpp:113
+msgid "Glito is free software."
+msgstr ""
+
+#: ImageGray.cpp:267 ImageGray.cpp:291
+msgid "Saving BMP file"
+msgstr ""
+
+#: ImageGray.cpp:309
+msgid "Saving PNG file"
+msgstr ""
+
+#: ImageGray.cpp:636
+msgid "Saving MNG file"
+msgstr ""
+
+#: Main.cpp:72 Main.cpp:83
+msgid "Open Skeleton"
+msgstr ""
+
+#: Main.cpp:88 Main.cpp:146 Main.cpp:169
+#, c-format
+msgid "Failed to open \"%s\"."
+msgstr ""
+
+#: Main.cpp:98
+msgid "Save Skeleton"
+msgstr ""
+
+#: Main.cpp:105
+msgid "Export Skeleton to Fractint"
+msgstr ""
+
+#: Main.cpp:126
+#, c-format
+msgid ""
+"Format: '%s'\n"
+"Resolution: %d x %d\n"
+"Use the arrows on the keyboard to move the image.\n"
+"Press space bar to save the calculated image."
+msgstr ""
+
+#: Main.cpp:138
+msgid "Open Color Map (pov-ray format)"
+msgstr ""
+
+#: Main.cpp:161
+msgid "Open Parameters"
+msgstr ""
+
+#: Main.cpp:174
+msgid "Save Parameters"
+msgstr ""
+
+#: Main.cpp:240 Main.cpp:258
+msgid "Width out of range."
+msgstr ""
+
+#: Main.cpp:249 Main.cpp:267
+msgid "Height out of range."
+msgstr ""
+
+#: Main.cpp:276 Main.cpp:289
+msgid "Value out of range."
+msgstr ""
+
+#: Main.cpp:329
+msgid ""
+"Do you want the program to calibrate the number\n"
+"of pixels to calculate for each frame?\n"
+"\n"
+"(Esc to cancel the process)"
+msgstr ""
+
+#: Main.cpp:330
+msgid "How many frames per second?"
+msgstr ""
+
+#: Main.cpp:361 Main.cpp:1536
+msgid "Parameters"
+msgstr ""
+
+#: Main.cpp:365
+msgid "Schema size:"
+msgstr ""
+
+#: Main.cpp:380
+msgid "Preview Size:"
+msgstr ""
+
+#: Main.cpp:395
+msgid "Rotation shift (rad):"
+msgstr ""
+
+#: Main.cpp:410
+msgid "Size of saved images:"
+msgstr ""
+
+#: Main.cpp:432
+msgid "Size of animations:"
+msgstr ""
+
+#: Main.cpp:454
+msgid "Frames per cycle (>1):"
+msgstr ""
+
+#: Main.cpp:468
+msgid "Motion detection (ms):"
+msgstr ""
+
+#: Main.cpp:484
+msgid "Density"
+msgstr ""
+
+#: Main.cpp:490
+msgid "or pseudo-density:"
+msgstr ""
+
+#: Main.cpp:509
+msgid "Points for framing:"
+msgstr ""
+
+#: Main.cpp:540
+msgid " for animation)"
+msgstr ""
+
+#: Main.cpp:547
+msgid "Number of iterations limited by:"
+msgstr ""
+
+#: Main.cpp:553
+msgid "Interval per frame (ms)"
+msgstr ""
+
+#: Main.cpp:576
+msgid "Points per frame"
+msgstr ""
+
+#: Main.cpp:594
+msgid "Calibrate"
+msgstr ""
+
+#: Main.cpp:604
+msgid "Black/White"
+msgstr ""
+
+#: Main.cpp:612
+msgid "Transparency:"
+msgstr ""
+
+#: Main.cpp:654
+#, c-format
+msgid "Number of functions (1->%d) ?"
+msgstr ""
+
+#: Main.cpp:664
+#, c-format
+msgid "The number of functions must be between 1 and %d"
+msgstr ""
+
+#: Main.cpp:768
+#, c-format
+msgid ""
+"Error occured during parsing:\n"
+"%s"
+msgstr ""
+
+#: Main.cpp:794
+msgid "Formulas editor"
+msgstr ""
+
+#: Main.cpp:800
+msgid "Enter the formulas of x(n+1) and y(n+1) using prefix notation."
+msgstr ""
+
+#: Main.cpp:806
+msgid "Variables: x y x1 x2 y1 y2 xc yc rand, and any number."
+msgstr ""
+
+#: Main.cpp:811 Main.cpp:815
+msgid "Functions: "
+msgstr ""
+
+#: Main.cpp:843
+msgid "Set formulas"
+msgstr ""
+
+#: Main.cpp:888 Main.cpp:926
+msgid "To zoom inside the general frame is not allowed!"
+msgstr ""
+
+#: Main.cpp:890
+msgid "Selected function is not contracting!"
+msgstr ""
+
+#: Main.cpp:896 Main.cpp:930
+msgid "The zoom animation requires a \"linear\" system."
+msgstr ""
+
+#: Main.cpp:902
+msgid "Memory 1 and 2 must have the same number of functions!"
+msgstr ""
+
+#: Main.cpp:935
+#, c-format
+msgid ""
+"Format: '%s'\n"
+"Resolution: %d x %d\n"
+"\n"
+"Press space bar to cancel calculation."
+msgstr ""
+
+#: Main.cpp:957
+msgid ""
+"Glito comes with absolutely no warranty.\n"
+"Glito is free software.\n"
+"For details, click on Help -> Documentation."
+msgstr ""
+
+#: Main.cpp:961
+msgid "Usage:"
+msgstr ""
+
+#: Main.cpp:961
+msgid "paramFile"
+msgstr ""
+
+#: Main.cpp:962
+msgid "skeletonFile"
+msgstr ""
+
+#: Main.cpp:963
+msgid "Report bugs to <glito@debanne.net>.\n"
+msgstr ""
+
+#: Main.cpp:1327
+msgid "No"
+msgstr ""
+
+#: Main.cpp:1328
+msgid "Yes"
+msgstr ""
+
+#: Main.cpp:1329
+msgid "OK"
+msgstr ""
+
+#: Main.cpp:1330
+msgid "Cancel"
+msgstr ""
+
+#: Main.cpp:1331
+msgid "Close"
+msgstr ""
+
+#: Main.cpp:1332
+msgid "Add to Favorites"
+msgstr ""
+
+#: Main.cpp:1333
+msgid "All Files (*)"
+msgstr ""
+
+#: Main.cpp:1334
+msgid "Custom Filter"
+msgstr ""
+
+#: Main.cpp:1335
+msgid "Please choose an existing file!"
+msgstr ""
+
+#: Main.cpp:1336
+msgid "Favorites"
+msgstr ""
+
+#: Main.cpp:1337
+msgid "Filename:"
+msgstr ""
+
+#: Main.cpp:1339
+msgid "My Computer"
+msgstr ""
+
+#: Main.cpp:1341
+msgid "File Systems"
+msgstr ""
+
+#: Main.cpp:1343
+msgid "Manage Favorites"
+msgstr ""
+
+#: Main.cpp:1344
+msgid "Preview"
+msgstr ""
+
+#: Main.cpp:1345
+msgid "Show:"
+msgstr ""
+
+#: Main.cpp:1359
+msgid ""
+"Glito is distributed under the terms of the GNU General Public License.\n"
+msgstr ""
+
+#: Main.cpp:1388 Main.cpp:1489
+msgid "Failed to open: "
+msgstr ""
+
+#: Main.cpp:1402
+msgid "manual_en.html"
+msgstr ""
+
+#: Main.cpp:1404
+msgid "&File"
+msgstr ""
+
+#: Main.cpp:1405
+msgid "&Open"
+msgstr ""
+
+#: Main.cpp:1406
+msgid "&Save"
+msgstr ""
+
+#: Main.cpp:1407
+msgid "&Export to Fractint"
+msgstr ""
+
+#: Main.cpp:1409
+msgid "Set Fast Save Directory"
+msgstr ""
+
+#: Main.cpp:1410
+msgid "Fast Save"
+msgstr ""
+
+#: Main.cpp:1411 Main.cpp:1518
+msgid "Save PNG"
+msgstr ""
+
+#: Main.cpp:1413
+msgid "Save PGM"
+msgstr ""
+
+#: Main.cpp:1414
+msgid "Save BMP bitmap"
+msgstr ""
+
+#: Main.cpp:1415
+msgid "Save BMP gray"
+msgstr ""
+
+#: Main.cpp:1416
+msgid "Edit &Paramaters"
+msgstr ""
+
+#: Main.cpp:1417
+msgid "Open Paramaters"
+msgstr ""
+
+#: Main.cpp:1418
+msgid "Sa&ve parameters"
+msgstr ""
+
+#: Main.cpp:1419
+msgid "&Quit"
+msgstr ""
+
+#: Main.cpp:1421
+msgid "&Skeleton"
+msgstr ""
+
+#: Main.cpp:1422
+msgid "&New"
+msgstr ""
+
+#: Main.cpp:1423
+msgid "&Random"
+msgstr ""
+
+#: Main.cpp:1424
+msgid "&Dimension"
+msgstr ""
+
+#: Main.cpp:1425
+msgid "&Coordinates"
+msgstr ""
+
+#: Main.cpp:1426
+msgid "out Memory1"
+msgstr ""
+
+#: Main.cpp:1427
+msgid "out Memory2"
+msgstr ""
+
+#: Main.cpp:1428
+msgid "out Memory3"
+msgstr ""
+
+#: Main.cpp:1429
+msgid "out Memory4"
+msgstr ""
+
+#: Main.cpp:1430
+msgid "in Memory1"
+msgstr ""
+
+#: Main.cpp:1431
+msgid "in Memory2"
+msgstr ""
+
+#: Main.cpp:1432
+msgid "in Memory3"
+msgstr ""
+
+#: Main.cpp:1433
+msgid "in Memory4"
+msgstr ""
+
+#: Main.cpp:1435
+msgid "&Function"
+msgstr ""
+
+#: Main.cpp:1436
+msgid "Pre&vious"
+msgstr ""
+
+#: Main.cpp:1437
+msgid "&Next"
+msgstr ""
+
+#: Main.cpp:1438
+msgid "&Cut"
+msgstr ""
+
+#: Main.cpp:1439
+msgid "C&opy"
+msgstr ""
+
+#: Main.cpp:1440
+msgid "&Paste"
+msgstr ""
+
+#: Main.cpp:1441
+msgid "&Reshape"
+msgstr ""
+
+#: Main.cpp:1443
+msgid "&Linear"
+msgstr ""
+
+#: Main.cpp:1444
+msgid "&Sinusoidal"
+msgstr ""
+
+#: Main.cpp:1445
+msgid "&Julia"
+msgstr ""
+
+#: Main.cpp:1446
+msgid "&Formulas"
+msgstr ""
+
+#: Main.cpp:1447
+msgid "&Edit Formulas"
+msgstr ""
+
+#: Main.cpp:1449
+msgid "&Color"
+msgstr ""
+
+#: Main.cpp:1450 Main.cpp:1553
+msgid "Open Color Map"
+msgstr ""
+
+#: Main.cpp:1451 Main.cpp:1545
+msgid "Color / B&W"
+msgstr ""
+
+#: Main.cpp:1452
+msgid "Maps:"
+msgstr ""
+
+#: Main.cpp:1453
+msgid "Autumn"
+msgstr ""
+
+#: Main.cpp:1454
+msgid "Fast"
+msgstr ""
+
+#: Main.cpp:1455
+msgid "CMY"
+msgstr ""
+
+#: Main.cpp:1456
+msgid "RGB"
+msgstr ""
+
+#: Main.cpp:1457
+msgid "Light CMY"
+msgstr ""
+
+#: Main.cpp:1458
+msgid "Dark"
+msgstr ""
+
+#: Main.cpp:1459
+msgid "Rich"
+msgstr ""
+
+#: Main.cpp:1461
+msgid "&Animation"
+msgstr ""
+
+#: Main.cpp:1462
+msgid "&Zoom"
+msgstr ""
+
+#: Main.cpp:1463
+msgid "&Transition: Mem1 <-> Mem2"
+msgstr ""
+
+#: Main.cpp:1464
+msgid "&Rotation"
+msgstr ""
+
+#: Main.cpp:1465
+msgid "&Stop"
+msgstr ""
+
+#: Main.cpp:1467
+msgid "Save Zoom as MNG"
+msgstr ""
+
+#: Main.cpp:1468
+msgid "Save Transition as MNG"
+msgstr ""
+
+#: Main.cpp:1469
+msgid "Save Rotation as MNG"
+msgstr ""
+
+#: Main.cpp:1472
+msgid "&Help"
+msgstr ""
+
+#: Main.cpp:1473
+msgid "Docu&mentation"
+msgstr ""
+
+#: Main.cpp:1474
+msgid "&Demo"
+msgstr ""
+
+#: Main.cpp:1475
+msgid "&About"
+msgstr ""
+
+#: Main.cpp:1509
+msgid "Open"
+msgstr ""
+
+#: Main.cpp:1526
+msgid "Fast save"
+msgstr ""
+
+#: Main.cpp:1562
+msgid "Random"
+msgstr ""
+
+#: Main.cpp:1571
+msgid "Previous function"
+msgstr ""
+
+#: Main.cpp:1579
+msgid "Next function"
+msgstr ""
+
+#: Main.cpp:1588
+msgid "Enlarge"
+msgstr ""
+
+#: Main.cpp:1597
+msgid "Rot/Dil"
+msgstr ""

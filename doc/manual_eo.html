@@ -1,0 +1,314 @@
+<HTML><HEAD>
+<TITLE>Uzindikoj de Glito</TITLE>
+</HEAD><BODY>
+
+<H1>Uzindikoj de Glito</H1>
+
+<P>[<A href="manual_fr.html">Version Fran&ccedil;aise</A>]
+&nbsp;[<A href="manual_en.html">English version</A>]
+
+<P><SMALL>Copyright (C) 1996, 2002-2004 Emmanuel Debanne
+(emmanuel a debanne . net)
+<BR>Tiu programo estas eldonata laux la <A href="#copy">GNUa Gxenerala
+Publika Permesilo</A>. Gxi uzas la bibliotekon FLTK (<A
+href="http://www.fltk.org/">www.fltk.org</A>).
+</SMALL>
+
+<P>Glito estas eksplorilo de la fraktaloj nomataj IFS (de la angla
+Iterated Function System). Glito ebligas la konstruon mane aux hazarde
+de tiuj fraktaloj kaj la tuja vido de la fraktalo kiu rezultas de la
+interago.  Kelkaj animacioj estas proponataj. La rezulto (cxu nur
+bildo cxu animacio) estas registrebla.
+
+<UL>
+<LI><A href="#parameters">Parametroj</A></LI>
+<LI><A href="#file">Menuo Dosiero</A></LI>
+<LI><A href="#help">Menuo Helpo</A></LI>
+<LI><A href="#preview">Regximo de antauxvido</A></LI>
+<LI><A href="#function">Menuo Funkcio</A></LI>
+<LI><A href="#skelet">Menuo Skeleto</A></LI>
+<LI><A href="#anim">Menuo Animacio</A></LI>
+<LI><A href="#shortcut">Klavfunkcioj</A></LI>
+<LI><A href="#copy">Kopirajto</A></LI>
+</UL>
+
+<HR>
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="parameters">Parametroj</H2>
+
+<P>Kiam lancxita, Glito provas legi la dosieron "param.xml". Se tiu
+cxi dosiero ne ekzistas, aprioraj parametroj estas uzataj.
+
+<P>Parametroj estas modifeblaj en Dosiero->Modifi_parametrojn,
+legeblaj de dosiero danke al Dosiero->Legi_parametrojn kaj
+registreblaj danke al Dosiero->Registri_Parametrojn.
+
+<P>Jen la listo de la parametroj modifeblaj en Dosiero->Parametroj.
+
+<H5>Dimensioj de la skemo</H5>
+Proporcio inter la dimensioj de la skemo kaj la plej malgranda
+dimensio (alto aux largxo) de la cxefa fenestro.
+
+<H5>Dimensioj de la antauxvido</H5>
+Proporcio inter la dimensioj de la antauxvida bildo kaj la dimensioj
+de la cxefa fenestro.
+
+<H5>Angulo de rotacio (rad)</H5>
+La premo de la klavoj "sago supren" kaj "sago malsupren" rotaciigas la
+selektatan funkcion per tiu radiana angulo.
+
+<H5>Dimensioj de registratajxoj</H5>
+Alto kaj largxo de la registritaj bildoj.
+
+<H5>Bildoj po ciklo</H5>
+Kvanto da bildo po ciklo de animacio (duoble por rivoluo aux transformo).
+
+<H5>Relego de muspozicio (ms)</H5>
+Minimuma intertempo antaux la relego de la muspozicio.
+
+<H5>Denseco</H5>
+La lumeco de bildero rilatas al kvanto da atingo dum la komputado.
+Kontrauxe al "Minimuma grizo", 255 ne limas tiu kvanto.  La
+malavantagxoj estas ke la komputado estas malpli rapida kiam bildo
+estas remontrata kaj ke la programo bezonas kvinoblan memoron.
+
+<H5>Minimuma grizo</H5>
+Minimuma valoro de lumeco de bildero. Dum komputado de bildo, kiam
+bildero estas atingita je la unua fojo, sia koloro igxas la minimuma
+valoro de lumeco. Kiam atingita je nova fojo, sia koloro estas
+krementi per 1. 
+
+<H5>Kvanto da iteracioj dum kadrado</H5>
+Kvanto da komputataj punktoj uzataj por difini la plej malgranda kadro
+entenante la fraktalon. Ju pli granda tiu kvanto, des pli longa la
+tempo por vidi novan fraktalon.
+
+<H5>por animacio</H5>
+La Kvanto da iteracioj dum kadrado estas multiplikata per tiu
+koeficiento kiam temas pri bildo de antauxvido aux animacio.
+
+<H5>Tempo po bildo</H5>
+La tempo de komputado antaux apero de nova bildo estas regata cxu laux
+tempa mezuro je milisekundoj, cxu laux kvanto da komputadaj punktoj.
+Atentu: la mezurata tempo estas tempo de la programo kaj ne reala
+tempo.
+
+<H5>Iteracioj po bildo</H5>
+Kvanto da punktoj komputataj antaux remontro de la bildo aux montro de
+sekvanta bildo.
+
+<H5>Kalibri</H5>
+La kalibrado komputas la kvanton da punktoj po bildo da animacio
+(Iteracioj po bildo) laux kvanto da bildoj po sekundo (reala sekundo
+kaj ne sekundo de la programo).
+<BR>Post la kalibrado, estas: iteracioj_dum_kadrado =
+5*iteracioj_po_bildo.
+
+<H5>Nigra/Blanka</H5>
+Sxangxas la fonkoloron de la bildoj.
+
+<H5>Travideco</H5>
+PNGaj (prononcu 'pingaj') bildoj kaj MNGaj (prononcu 'mingaj')
+animacioj povas esti registri kun travideco.  Nur la fonkoloro povas
+esti travidebla ("fonkoloro") aux cxiuj koloroj ("alfa").
+
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="file">Menuo Dosiero</H2>
+
+<H3>Registri la parametroj</H3>
+
+<P>Cxiuj la parametroj jxus prezentitaj estas registreblaj en dosiero
+danke al Dosiero->Registri_Parametrojn.
+
+<H3>Skema vido / Grandigita vido</H3>
+
+<P>Oni sxangxas de regximo de vido (skemo kaj antauxvido aux grandigita
+vido) per la menuo aux la klavo 'b'.
+
+<H3>Registri PNG/BMP/PGM</H3>
+
+<P>La bildoj de la fraktaloj estas registreblaj lax la datenstrukturoj
+PNGa, PGMa aux BMPa (unubite aux okbite).
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="help">Menuo Helpo</H2>
+
+<P>Helpo->Dokumento por vidi cxi tiu dosiero.
+
+<P>Helpo->Prezenta_Animacio lancxas hazardan prezenton.<BR> Rivoluo,
+proksimigxo kaj transformo al nova skeleto okazas dum la
+ciklo. Lineara, sinusoida kaj julialineara cikloj sin sekvas.
+
+<P>Helpo->Pri: versio kaj kopirajto de la programo.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="preview">Antauxvida regximo</H2>
+
+<P>Kun tiu regximo, la skeleto estas modifebla per la muso kaj la
+klavaro. La fraktalo kiu rezultat estas montrata samtempe.
+
+<P>Funkcio de IFSa fraktalo estas dudimensia afina funkcio. Oni
+skribas gxin:
+<BR>X<sub>n+1</sub> = x<sub>1</sub> X<sub>n</sub>
+ + x<sub>2</sub> Y<sub>n</sub> + x<sub>c</sub>
+<BR>Y<sub>n+1</sub> = y<sub>1</sub> X<sub>n</sub>
+ + y<sub>2</sub> Y<sub>n</sub> + y<sub>c</sub>
+
+<P>Tia funkcio estas figurata per paralelogramo de centro la punkto
+(x<sub>c</sub>, y<sub>c</sub>) kaj kies du sinsekvaj strekoj estas la
+vektoroj V<sub>1</sub> = (x<sub>1</sub>, y<sub>1</sub>) kaj
+V<sub>2</sub> = (x<sub>2</sub>,y<sub>2</sub>).
+
+<P>Skeleto konsistas en kvanto <I>n</I> de tiaj funkcioj (la IFSo) kaj
+de unu funkcio uzata por difini la videblan parton de la fraktalo.
+
+<P>Selektata funkcio estas rugxa kaj flava krom la kadranta funkcio
+kiu estas rugxa kaj blanka por distingi gxin.
+
+<BR>Premu la klavojn 'v' (aux "sago maldekstren") kaj 'n' (aux
+"sago dekstren") por selekti la antauxan aux postan funkcion.
+
+<P>Du regximoj de funkciado ekzistas por la muso. La unua regximo
+(rot/dil ne markita) servas por translacii paralelogramon aux modifi
+la vektorojn V<sub>1</sub> aux V<sub>2</sub>.  La dua regximo servas
+por rotacii kaj grandigi aux malgrandigi paralelogramon.
+
+<P>Alklaku la spacetan klavon aux la menuan butonon por sxangxi la
+musa regximo.
+
+<H4>Regximo normala</H4>
+
+<P>La valoroj x<sub>c</sub> kaj y<sub>c</sub> de funkcio estas
+modifataj per premado de la maldekstra musklavo kaj movado de la muso
+samtempe. La centro de la paralelogramo sekvas la musmontrilon.
+
+<P>La valoroj x<sub>1</sub> kaj y<sub>1</sub> (vektoro V<sub>1</sub>)
+aux x<sub>2</sub> kaj y<sub>2</sub> (vektoro V<sub>2</sub>) estas
+modifeblaj per premado de la dekstra musklavo. La ekstremajxo de la
+vektoroj V<sub>1</sub> kaj V<sub>2</sub> kiu estas la plej proksima de
+la musmontrilo difinas la modifotan vektoron. La formo de la centro de
+paralelogramo indikas la ordon de la vektoroj V<sub>1</sub> kaj
+V<sub>2</sub> (+ aux - laux la pozitiveco aux negativeco de la sinuso
+de la angulo (V<sub>1</sub>,V<sub>2</sub>)).
+
+<P>Alklaku la mezan musklavon (aux ambaux musklavoj) por modifi nur
+unu vektoron. La dua vektoro ne movas.
+
+<H4>Regximo rotacia/homotetia</H4>
+
+<P>Por rotacii (respektive modifi dimensie) paralelogramon, alklaku la
+maldekstran (respektive dekstran) musklavon. Tiuj transformoj movas la
+punkton formitan de ekstremajxojn de la vektoroj V<sub>1</sub> kaj
+V<sub>2</sub>.  Rotacio kaj homotetio povas okazi samtempe per premado
+de la meza musklavo (aux de maldekstra kaj dekstra musklavoj). La
+punkto sekvas la musan movon.
+
+<P>Jen resumo de la eblaj agoj kun la muso. La valoroj modifataj estas
+indikataj per rektaj krampoj:
+
+<P>
+<TABLE border="2">
+<TR><TD>Regximo</TD><TD>Maldekstra musklavo</TD><TD>Dekstra musklavo</TD>
+<TD>Meza musklavo<BR>(aux maldekstra + dekstra)</TD></TR>
+<TR><TD>normala  </TD><TD>translacio [x<sub>c</sub>,y<sub>c</sub>]</TD><TD>V<sub>1</sub> [x<sub>1</sub>,y<sub>1</sub>] aux V<sub>2</sub> [x<sub>2</sub>,y<sub>2</sub>]</TD>
+<TD>V<sub>1</sub> kaj centro [x<sub>1</sub>,y<sub>1</sub>,x<sub>c</sub>,y<sub>c</sub>] <BR>aux V<sub>2</sub> kaj centro [x<sub>2</sub>,y<sub>2</sub>,x<sub>c</sub>,y<sub>c</sub>]</TD></TR>
+<TR><TD>Rot/Hom</TD><TD>rotacio [x<sub>1</sub>,y<sub>1</sub>,x<sub>2</sub>,y<sub>2</sub>]</TD><TD>homotetio [x<sub>1</sub>,y<sub>1</sub>,x<sub>2</sub>,y<sub>2</sub>]</TD>
+<TD>rotacio kaj homotetio</TD></TR>
+</TABLE>
+
+<P>Premu la klavoj "sago supren" kaj "sago malsupren" por rotacii la
+paralelogramon je angulo "Angulo de rotacio".
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="function">Menuo Funkcio</H2>
+
+<P>La menuo "Funkcio" kaj la klavfunkcioj CTRL+X,C,V utilas por
+forpreni, kopii kaj aldoni funkcion.
+
+<P>Paralelogramo estas kvadratigebla per Funkcion->Kvadratigi aux
+klavo 's'.
+
+<P>Por sxangxi la specon de fraktalo, selektu Funkcio->Lineara,
+Funkcio->Sinusoida aux Funkcio->Julia. La skalo de la skema adaptigxas
+auxtomate.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="skelet">Menuo Skeleto</H2>
+
+<P>Alklaku Skeleto->Nova por krei novan fraktalon.  Kelkaj famaj
+fraktaloj estas konstruebla per selekto de kvadrata numbro de funkcioj
+(4 aux 9) kaj poste per forpreno de kelkaj funkcioj
+(Funkcio->Forpreni).
+
+<P>Skeleto->Hazarde (klavo 'h') modifas hazarde la valoroj de la
+funkcio.  Uzebla kun la skema antauxvido kaj la grandigita vido.
+
+<P>La skeletoj estas registreblaj kaj legeblaj en facile komprenebla
+teksto per Skeleto->Registri_skeleton kaj Skeleto->Legi. Ili estas
+uzeblaj per la programo "Fractint" danke al
+Skeleto->Registri_skeleton_Fractint-e. Atentu: ambaux malsamaj
+dosieraj struktoroj havas la saman sufixkon ".ifs".
+
+<P>Skeleto->Dimensio kalkulas la Hausdorff-an dimension de la fraktalo.
+
+<P>La skeletoj estas rapide registreblaj por tempeto. Kvar memoroj
+ekzistas. Por registri la skelekton, selektu Skelekto->Enigi_memoron_X
+aux premu la klavojn '5', '6', '7' aux '8'. Por eligi jam registritan
+skeleton, selektu Skeleton->Eligi_memoron_X aux premu la klavojn '1',
+'2', '3' aux '4'.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="anim">Menuo Animacio</H2>
+
+<H5>Proksimigxo</H5>
+
+<P>Por proksmigxi de la selektata funkcio.
+
+<H5>Transformo</H5>
+
+<P>Por transformi la skeleton de la memoro 1 en la skeleton de la
+memoro 2 kaj reiri al la skeleton de la memoro 1.
+
+<H5>Rivoluo</H5>
+
+<P>La selektata funkcio estas rotaciata por cxiu nova bildo de la
+animacio per angulo kiu valoras PI/(kvanto da bildoj po ciklo).
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="shortcut">Klavfunkcioj</H2>
+
+<P>La klavfunkcioj de Glito (ekster CTRL-xxx) estas :
+
+<P><TABLE border="1">
+<TR><TD>'ESC' eskapo</TD><TD>La komputado pauxzas.
+<BR>Repremu ESC por dauxrigi le komputadon.</TD></TR>
+<TR><TD>'b'</TD><TD>Skema vido aux grandigita vido alterne.</TD></TR>
+<TR><TD>'Espace'</TD><TD>Sxangas la regximon de la muso.</TD></TR>
+<TR><TD>'v' et 'n'</TD><TD>Selektas la antauxax aux postan funkcion.</TD></TR>
+<TR><TD>'F1'</TD><TD>Montras tiu dokumento.</TD></TR>
+<TR><TD>'z'</TD><TD>Lancxas la animacion "proksimigxo".</TD></TR>
+<TR><TD>'t'</TD><TD>Lancxas la animacion "transformo".</TD></TR>
+<TR><TD>'r'</TD><TD>Lancxas la animacion "rivoluo".</TD></TR>
+<TR><TD>'s'</TD><TD>Kvadratigas paralelogramon.</TD></TR>
+<TR><TD>1, 2, 3 ou 4</TD><TD>Eligas la skeleton el la memoro 1, 2, 3 aux 4</TD></TR>
+<TR><TD>5, 6, 7 ou 8</TD><TD>Enigas la skeleton en la memoro 1, 2, 3 aux 4</TD></TR>
+</TABLE>
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="copy">Kopirajto</H2>
+
+<P>Glito is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+<P>Glito is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+<P>You should have received a copy of the GNU General Public License
+along with Glito (named <A href="COPYING">COPYING</A>); if not, write to the Free
+Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA
+<HR>
+</HTML>

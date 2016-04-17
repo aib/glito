@@ -1,0 +1,17 @@
+v1.1
+
+Read doc/manual_en.html for informations on Glito.
+Lisez doc/manual_fr.html pour obtenir des informations sur Glito.
+Legu doc/manual_eo.html por informighi pri Glito.
+
+*** THANKS TO ***
+
+Pierre-Emmanuel Reb (spiralling zoom, pseudo-logarithmic grey level,
+mouse dragging)
+
+*** How to update I18N ***
+cd src
+xgettext -k_ *.cpp *.hpp
+cp messages.po ../po/glito.pot
+cd ../po
+msgmerge fr.po glito.pot -o fr.po

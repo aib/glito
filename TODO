@@ -1,0 +1,17 @@
+target 1.2
+ - update doc
+
+ - use Fl_Preferences
+
+ - initial point for orbit in Formula mode
+
+ - create color maps
+
+target 1.3
+ - 3D IFS
+
+
+later
+ - undo function
+
+ - formula editor: infix notation

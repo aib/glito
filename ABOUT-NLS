@@ -1,0 +1,6 @@
+Pour franciser Glito, executer selon le shell :
+bash >>>  export LC_ALL=fr_FR
+csh  >>>  setenv LC_ALL fr_FR
+sh   >>>  export LC_ALL; LC_ALL=fr_FR
+
+(por esperantigi Glito, uzu eo_EO anstataux fr_FR)

@@ -1,0 +1,312 @@
+<HTML><HEAD>
+<TITLE>Manual of Glito</TITLE>
+</HEAD><BODY>
+
+<H1>Manual of Glito</H1>
+
+<P>[<A href="manual_eo.html">Esperanta traduko</A>]
+&nbsp;[<A href="manual_fr.html">Version fran&ccedil;aise</A>]
+
+<P><SMALL>Copyright (C) 1996, 2002-2004 Emmanuel Debanne
+(emmanuel a debanne . net)
+<BR>This software is provided under the terms of the <A
+href="#copy">GNU General Public License</A>. Glito is based in part on
+the work of the FLTK project (<A
+href="http://www.fltk.org/">www.fltk.org</A>).
+</SMALL>
+
+<P>Glito is a tool to explore a type of fractals : the IFS (Iterated
+Function System).  It can be done manually or randomly. While building
+your IFS, you can visalize the result in real-time. You can animate
+your IFS (zoom, transition or rotation). You can save your work as an
+image or an animation in gray level.
+
+<UL>
+<LI><A href="#parameters">Parameters</A></LI>
+<LI><A href="#file">Menu: File</A></LI>
+<LI><A href="#help">Menu: Help</A></LI>
+<LI><A href="#preview">Preview Mode</A></LI>
+<LI><A href="#function">Menu: Function</A></LI>
+<LI><A href="#skelet">Menu: Skeleton</A></LI>
+<LI><A href="#anim">Menu: Animation</A></LI>
+<LI><A href="#shortcut">Shortcuts</A></LI>
+<LI><A href="#copy">Copyright</A></LI>
+</UL>
+
+<HR>
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="parameters">Parameters</H2>
+
+<P>When launched, Glito tries to read the file named "param.xml". If
+it does not exist, default parameters are used.
+
+<P>The parameters can be modified with File->Edit_Parameters, read
+from a file with File->Open_Parameters and saved with
+File->Save_Parameters.
+
+<P>This is the list of the parameters which can be changed with
+File->Parameters:
+
+<H5>Schema Size</H5>
+Ratio of the size of the schema to the size of the main window.
+
+<H5>Preview Size</H5>
+Ratio of the image for preview to the size of the main window.
+
+<H5>Rotation shift</H5>
+The keys "arrow up" and "arrow down" rotate the selected function. The
+angle of rotation is given by this value in radian.
+
+<H5>Size of saved images</H5>
+Width and height of saved images.
+
+<H5>Frames per cycle</H5>
+Number of frames during a cycle of an animation. Multiplied by 2 for
+a transition or a rotation.
+
+<H5>Motion detection</H5>
+Interval of time before detecting mouse events.
+
+<H5>Density</H5>
+Color of a pixel depends on the number of times it was reached.
+Contrary to "Minimal gray", this number is not limited by 255.
+Drawbacks are that an image needs more time to refresh and that the
+required quantity of memory is multiplied by 5.
+
+<H5>Minimal gray</H5>
+Minimal value of a pixel. The first time that a pixel is reached by
+the computation, it is set to this value. The next times that it is
+reached, it is increased by one.
+
+<H5>Points for framing</H5>
+Number of points to calculate the bounding box of the IFS.  The higher
+this number is, the longer you will have to wait to see a new IFS, but
+the more you will be sure that it is contained in the frame.
+
+<H5>For animation</H5>
+Points for framing is multiplied by this coefficient for preview and
+animation modes.
+
+<h5>Interval per frame</H5>
+The time to wait before refreshing can be defined as a time in
+milli-seconds or as a number of points to calculate. Caution: the time
+measured is the process time and not the real time.
+
+<H5>Points per frame</H5>
+Number of points to compute before refreshing.
+
+<H5>Calibrate</H5>
+Calibration can calculate the number of points required for each
+frame of an animation (pointsPerFrame) according to the number of
+frames per seconde (a real seconde not a second of the programm).
+<BR>After a calibration, we get: pointsForFraming = 5*pointsPerFrame.
+
+<H5>Black/White</H5>
+Modify the background color of the images.
+
+<H5>Transparency</H5>
+A PNG image or a MNG animation can be saved with transparency.  All
+the colors(alpha) or only the color of the background (one color) can
+be transparent.
+
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="file">Menu: File</H2>
+
+<H3>Save the parameters</H3>
+
+<P>All the preceding parameters can be saved in the file named
+"param.xml". To save the parameters, click on File->Save_Parameters.
+
+<H3>Schema view/Large view</H3>
+
+<P>These menu items allow to pass from the schema view (schema of the
+IFS and small image of preview) to a large view of the image. The
+key 'b' can be used for the same purpose.
+
+<H3>Save PNG/BMP/PGM</H3>
+
+<P>The fractals can be saved in a PNG, PGM or BMP file (bitmap or gray
+level).
+
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="help">Menu: Help</H2>
+
+<P>Help->Documentation: to visualize this file.
+
+<P>Help->Demo: to launch a demo.<BR> A rotation, a zoom and a
+transition to a new skeleton are done in the cyclic process. Linear
+and sinusoidal IFS are used successively.
+
+<P>Help->About : version and copyright of this program.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="preview">Preview Mode</H2>
+
+<P>The skeleton can be modified with the mouse and the keyboard. The
+result is shown in real-time.
+
+<P>A function is written:
+<BR>X<sub>n+1</sub> = x<sub>1</sub> X<sub>n</sub>
+ + x<sub>2</sub> Y<sub>n</sub> + x<sub>c</sub>
+<BR>Y<sub>n+1</sub> = y<sub>1</sub> X<sub>n</sub>
+ + y<sub>2</sub> Y<sub>n</sub> + y<sub>c</sub>
+
+<P>This function is represented by a parallelogram of center
+(x<sub>c</sub>, y<sub>c</sub>) and whose two contiguous sides are the
+vectors V<sub>1</sub> = (x<sub>1</sub>, y<sub>1</sub>) et
+V<sub>2</sub> = (x<sub>2</sub>, y<sub>2</sub>).
+
+<P>A skeleton is a number n of these functions (which form the IFS)
+plus a function used as a zoom.
+
+<P>The selected function is shown up thanks to red color vectors. The
+zoom function is coloured white to be distinguished from the other
+functions
+
+<BR>Press the keys 'v' (or "left arrow") and 'n' (or "right arrow") to
+change the selected function.
+
+<P>Two modes of reaction to mouse motions exist. The first (rot/dil
+not ticked in the menu bar) allows the translation of the
+parallelogram or the midification of the summits of the vectors
+V<sub>1</sub> or V<sub>2</sub>. With the second mode (rot/dil ticked),
+a rotation, a dilation or both simultaneously can be applied to the
+parallelogram.
+
+<P>To change the mouse mode, use the space bar or tick on "rot/dil"
+in the menu bar.
+
+<H4>Normal Mode</H4>
+
+<P>Click on the left button while dragging the mouse to mofify the
+x<sub>c</sub> and y<sub>c</sub> values of a function. The center of the
+parallelogram follows the mouse.
+
+<P>Click on the right button while dragging the mouse to modify
+x<sub>1</sub> and y<sub>1</sub> values (vector V<sub>1</sub>) or
+x<sub>2</sub> and y<sub>2</sub> values (vector
+V<sub>2</sub>). V<sub>1</sub> or V<sub>2</sub> is chosen according to
+the distance of the mouse from the extremities of these vectors. The
+shape of the center of the parallelogram indicates the order of the
+V<sub>1</sub> and V<sub>2</sub> vectors (+ or - according to the value
+of the sinus of the angle (V<sub>1</sub>,V<sub>2</sub>)).
+
+<P>To modify only one vector at a time, press the two buttons of your
+mouse or the middle button.
+
+<H4>Rotation/dilation Mode</H4>
+
+<P>Click on the left button of the mouse to rotate the
+parallelogram. Click on the right button to modify its size.  The
+summit formed by V<sub>1</sub> and V<sub>2</sub> follows the
+mouse. These transformations are simultaneous if you click on both
+buttons or on the middle button.
+
+<P>Here is a summary of the possible mouse interactions. The modified
+resulting values are indicated between square brackets:
+
+<P>
+<TABLE border="2">
+<TR><TD>Mode</TD><TD>Left Button</TD><TD>Riht Button</TD>
+<TD>Middle Bouton<BR>(or left + right buttons)</TD></TR>
+<TR><TD>normal   </TD><TD>translation [x<sub>c</sub>,y<sub>c</sub>]</TD><TD>V<sub>1</sub> [x<sub>1</sub>,y<sub>1</sub>] or V<sub>2</sub> [x<sub>2</sub>,y<sub>2</sub>]</TD>
+<TD>V<sub>1</sub> and center [x<sub>1</sub>,y<sub>1</sub>,x<sub>c</sub>,y<sub>c</sub>] <BR>or V<sub>2</sub> and centre [x<sub>2</sub>,y<sub>2</sub>,x<sub>c</sub>,y<sub>c</sub>]</TD></TR>
+<TR><TD>rot/dil</TD><TD>rotation [x<sub>1</sub>,y<sub>1</sub>,x<sub>2</sub>,y<sub>2</sub>]</TD><TD>dilation [x<sub>1</sub>,y<sub>1</sub>,x<sub>2</sub>,y<sub>2</sub>]</TD>
+<TD>rotation and dilation</TD></TR>
+</TABLE>
+
+<P>The keys "arrow up" and "arrow down" rotate the selected function. The
+angle of rotation is given by the value of "rotation shift".
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="function">Menu: Function</H2>
+
+<P>A function can be cut, copied or pasted thanks to the menu
+"Function" or the shortcuts CTRL+X,C,V.
+
+<P>To reshape a parallelogram to a square, click on Function->Reshape
+or press the key 's'.
+
+<P>To change the system type, click on Function->Linear,
+Function->Sinusoidal or Function->Julia. The schema scale is
+automatically changed.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="skelet">Menu: Skeleton</H2>
+
+<P>Click on Skeleton->New to create a new fractal with the wanted
+number of function. You can find some well-known fractals by entering
+a square number of functions (4 or 9) and by removing some of them
+with Function->Cut (CTRL-X).
+
+<P>To modify randomly the IFS, click on Skeleton->Random ('h' key). You
+can use it in preview mode and in large mode as well.
+
+<P>The skeletons can be saved and opened in a kind of XML format with
+Skeleton->Save and Skeleton->Open. Skeletons can be exported to a
+Fractint format too with Skeleton->Export_to_Fractint. Be careful:
+both formats use the same extension ".ifs".
+
+<P>Skeleton->Dimension gives the Hausdorff dimension of a Skeleton.
+
+<P>Four memories can be used to store a skeleton. Use
+Skeleton->in_MemoryX or the keys '5', '6', '7' or '8' to save in
+memory a skeleton. To recover a skeleton : Skeleton->out_MemoryX or
+the keys '1', '2', '3' and '4'.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="anim">Menu: Animation</H2>
+
+<H5>Zoom</H5>
+
+<P>To zoom inside the selected function.
+
+<H5>Transition</H5>
+
+<P>To do a transition between the skeleton in memory 1 and the
+skeleton in memory 2.
+
+<H5>Rotation</H5>
+
+<P>The selected function is turned of an angle PI/(frames per cycle)
+for each new frame.
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="shortcut">Shortcuts</H2>
+
+<P>Here is a list of the keyboard shortcuts of Glito (different from CTRL-xxx):
+
+<P><TABLE border="1">
+<TR><TD>'ESC'</TD><TD>Interrupt for a while a calculation.
+<BR>Press again 'ESC' to go on.</TD></TR>
+<TR><TD>'b'</TD><TD>Set the preview mode or the large view mode.</TD></TR>
+<TR><TD>'space'</TD><TD>Change the reaction mode to mouse clicks.</TD></TR>
+<TR><TD>'v' and 'n'</TD><TD>Change the selected function.</TD></TR>
+<TR><TD>'F1'</TD><TD>Show this documentation</TD></TR>
+<TR><TD>'z'</TD><TD>Launch a "zoom" animation.</TD></TR>
+<TR><TD>'t'</TD><TD>Launch a "transition" animation.</TD></TR>
+<TR><TD>'r'</TD><TD>Launch a "rotation" animation.</TD></TR>
+<TR><TD>'s'</TD><TD>Transform a parallelogram to a square.</TD></TR>
+<TR><TD>1, 2, 3 ou 4</TD><TD>Set the skeleton to the one in memory 1, 2, 3 or 4</TD></TR>
+<TR><TD>5, 6, 7 ou 8</TD><TD>Save the skeleton in memory 1, 2, 3 or 4</TD></TR>
+</TABLE>
+
+<!-- ///////////////////////////////////////////// -->
+<H2><A name="copy">Copyright</H2>
+
+<P>Glito is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.
+<P>Glito is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+<P>You should have received a copy of the GNU General Public License
+along with Glito (named <A href="COPYING">COPYING</A>); if not, write to the Free
+Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307 USA
+<HR>
+</HTML>
