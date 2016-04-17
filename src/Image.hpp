@@ -45,7 +45,7 @@ public:
 
     ~Image();
 
-    Image::Image( const Image& other ) { copy(other); }
+    Image( const Image& other ) { copy(other); }
 
     Image& operator=( const Image& other );
 
