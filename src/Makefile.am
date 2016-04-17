@@ -32,3 +32,5 @@ localedir = $(datadir)/locale
 DEFS = -DDOCDIR=\"$(docdir)\" -DLOCALEDIR=\"$(localedir)\" @DEFS@
 
 INCLUDES = -I.. -I../intl
+
+AM_CXXFLAGS = -fpermissive
