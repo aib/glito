@@ -23,6 +23,7 @@ USA.
 #include <iostream>
 #include <algorithm>
 // lower_bound
+#include <limits>
 #include <cassert>
 
 #include <FL/fl_draw.H>
