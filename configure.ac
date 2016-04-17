@@ -51,6 +51,8 @@ AC_CHECK_LIB( png, png_init_io, ,
 AC_CHECK_LIB( mng, mng_initialize, ,
 	      AC_MSG_WARN(You will not have any MNG support!) )
 
+AC_CHECK_LIB( z, compress2, , AC_MSG_ERROR(Cannot find zlib. (Try installing the package libz-dev.)) )
+
 AM_GNU_GETTEXT
 
 AC_CONFIG_FILES( Makefile intl/Makefile po/Makefile.in \
